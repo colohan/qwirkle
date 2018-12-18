@@ -19,6 +19,13 @@ class Rack {
 	  pbag_->tiles_left() > 0) {
       tiles_.push_back(pbag_->pick_tile());
     }
+    // Just to be nice, sort the rack:
+    std::stable_sort(tiles_.begin(), tiles_.end(),
+		     [](Tile i, Tile j)
+		     {return i.shape() < j.shape();}); 
+    std::stable_sort(tiles_.begin(), tiles_.end(),
+		     [](Tile i, Tile j)
+		     {return i.color() < j.color();}); 
   }
 
   const std::vector<Tile> getTiles() const {

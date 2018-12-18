@@ -441,7 +441,7 @@ int main() {
     user_rack.print();
     if (computer_rack.size() < 6) {
       std::cout << "COMPUTER HAS " << computer_rack.size()
-		<< "TILES LEFT." << std::endl;
+		<< " TILES LEFT." << std::endl;
     }
 
     userTurn(&board, &user_rack, &user_score, first_move);
